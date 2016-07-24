@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Dal;
+using Newtonsoft.Json.Serialization;
 
 namespace AspNetCoreEf6Repository
 {
@@ -31,7 +32,13 @@ namespace AspNetCoreEf6Repository
             // Add framework services.
             services.AddScoped((_) => new ApplicationDbContext());
             services.AddScoped<IRepository, Repository>();
-            services.AddMvc();
+
+            services.AddMvc()
+                    .AddJsonOptions(options =>
+                    {
+                        options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+                        options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+                    });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
