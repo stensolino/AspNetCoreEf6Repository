@@ -13,5 +13,7 @@ namespace Dal
         public ApplicationDbContext() : base(@"Data Source=.\SQLEXPRESS;Initial Catalog=AspNetCoreEf6Repository;Integrated Security=True; MultipleActiveResultSets=True") { }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<Permission> Permissions { get; set; }
     }
 }

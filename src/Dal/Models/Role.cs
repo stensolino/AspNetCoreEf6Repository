@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Dal.Models
 {
-    public class User
+    public class Role
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public virtual ICollection<Role> Roles { get; set; }
+        public virtual ICollection<User> Users { get; set; }
+        public virtual ICollection<Permission> Permissions { get; set; }
     }
 }

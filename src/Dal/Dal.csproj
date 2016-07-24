@@ -55,7 +55,17 @@
     <Compile Include="Migrations\201607242114118_Version_1.0.0.Designer.cs">
       <DependentUpon>201607242114118_Version_1.0.0.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607242215190_Add Role and Permission.cs" />
+    <Compile Include="Migrations\201607242215190_Add Role and Permission.Designer.cs">
+      <DependentUpon>201607242215190_Add Role and Permission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607242217327_Update type for Permission Name property.cs" />
+    <Compile Include="Migrations\201607242217327_Update type for Permission Name property.Designer.cs">
+      <DependentUpon>201607242217327_Update type for Permission Name property.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Permission.cs" />
+    <Compile Include="Models\Role.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
@@ -67,6 +77,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201607242114118_Version_1.0.0.resx">
       <DependentUpon>201607242114118_Version_1.0.0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607242215190_Add Role and Permission.resx">
+      <DependentUpon>201607242215190_Add Role and Permission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607242217327_Update type for Permission Name property.resx">
+      <DependentUpon>201607242217327_Update type for Permission Name property.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
