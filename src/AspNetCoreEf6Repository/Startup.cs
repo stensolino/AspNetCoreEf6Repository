@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Dal;
 
 namespace AspNetCoreEf6Repository
 {
@@ -28,6 +29,8 @@ namespace AspNetCoreEf6Repository
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
+            services.AddScoped((_) => new ApplicationDbContext());
+            services.AddScoped<IRepository, Repository>();
             services.AddMvc();
         }
 

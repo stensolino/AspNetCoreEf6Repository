@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Dal
 {
-    public class Repository
+    public class Repository : IRepository
     {
         #region Constructor
 

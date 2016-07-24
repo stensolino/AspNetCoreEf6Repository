@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Dal
 {
-    interface IRepository
+    public interface IRepository
     {
         IEnumerable<User> GetAllUsers();
         User GetUserById(int id);

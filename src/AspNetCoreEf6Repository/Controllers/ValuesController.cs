@@ -3,17 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Dal;
+using Dal.Models;
 
 namespace AspNetCoreEf6Repository.Controllers
 {
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
+        private IRepository _db;
+
+        public ValuesController(IRepository db)
+        {
+            _db = db;
+        }
+
         // GET api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<User> Get()
         {
-            return new string[] { "value1", "value2" };
+            var users = _db.GetAllUsers();
+            return users;
+            
+            //return new string[] { "value1", "value2" };
         }
 
         // GET api/values/5

@@ -1,4 +1,4 @@
-﻿{
+{
   "dependencies": {
     "Microsoft.AspNetCore.Mvc": "1.0.0",
     "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0",
@@ -17,7 +17,13 @@
   },
 
   "frameworks": {
-    "net461": { }
+    "net461": {
+      "dependencies": {
+        "Dal": {
+          "target": "project"
+        }
+      }
+    }
   },
 
   "buildOptions": {
